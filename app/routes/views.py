@@ -80,10 +80,8 @@ def operational_responsibilities():
         
         # Obtener los resultados de la consulta
         query_results = connection.get(path=f'dbapi/v4/sql_jobs/{response_id}')
-        print(query_results)
         # Procesar la respuesta
         results = process_response(query_results)
-        print(results)
         
         if not results:
             return jsonify({'mensaje': 'No se encontraron responsabilidades operativas'}), 404
